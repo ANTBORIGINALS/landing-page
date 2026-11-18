@@ -38,8 +38,8 @@ Todas las rutas son relativas, así que funciona igual en un dominio propio o en
 - **Redes sociales** → `index.html`, sección del footer (`class="social"`): reemplaza los enlaces genéricos por tus perfiles.
 - **Textos** → todo el contenido está directamente en `index.html`.
 - **Colores** → variables al inicio de `css/style.css` (`:root`).
-- **Dominio (SITE_URL)** → `https://antboriginals.com/` se usa como marcador de posición en las etiquetas `canonical`, Open Graph y Twitter Card de `index.html`, `privacy-policy.html` y `terms-of-use.html`, además de en `robots.txt` y `sitemap.xml`. Busca ese texto en los cinco archivos y reemplázalo por tu dominio real (o por tu URL de `usuario.github.io/antboriginals/`) antes de publicar.
-- **Imagen de Open Graph** → por ahora `og:image`/`twitter:image` apuntan a `assets/wordmark-dark.png`, que es un wordmark muy ancho y bajo (2327×165). Funciona como marcador, pero para que las vistas previas en redes sociales se vean bien conviene crear una imagen dedicada de 1200×630 px.
+- **Dominio** → `https://antboriginals.com/` ya está definido en las etiquetas `canonical`, Open Graph, Twitter Card y JSON-LD de las cuatro páginas, y en `robots.txt` y `sitemap.xml`. Si algún día cambias de dominio, busca ese texto en esos archivos.
+- **Imagen de Open Graph** → `assets/og-image.jpg` (1200×630, creada a partir de la pieza "Built beyond the expected" del manual) se usa en `og:image` y `twitter:image` de todas las páginas.
 
 ## Video de fondo del hero
 
@@ -58,6 +58,10 @@ Todas las rutas son relativas, así que funciona igual en un dominio propio o en
 2. **FROM IDEA TO ASSET** — texto centrado; el sticker se convierte en el loader de cubos a la izquierda y se duplica (espejo) a la derecha.
 3. **Services** — escenario fijo (pin) donde cada servicio con video sube pequeño con el degradado del loader, se aclara y deja paso al siguiente; debajo, un slider para los cuatro servicios sin video (flechas, puntos, arrastre, teclado, autoplay). En móvil y con "reducir movimiento" los videos quedan apilados.
 4. **Ownership is part of the work** y **Contacto** — estáticos, sin cambios.
+
+## Manual de marca (`brand-manual.html`)
+
+Página propia con la versión de exhibición del manual (PDF incluido en `assets/brand/`, con botón de descarga). Usa `css/brand-manual.css` y `js/brand-manual.js`, y las imágenes recortadas del PDF en `assets/brand/`. Tipografía: **Helvetica Neue** (Bold, Regular, Ultra Light) — viene con macOS/iOS; en Windows/Android cae a Helvetica/Arial porque no se puede incrustar sin licencia. Animaciones: progreso de lectura, luz que sigue el cursor, titulares palabra por palabra, ticker de disciplinas, triángulo de la voz, muestras de color (clic para copiar HEX), probador tipográfico y grilla "u". Con "reducir movimiento" todo queda estático. Enlazada desde el menú ("Brand") de todas las páginas y desde `sitemap.xml`.
 
 ## Páginas legales
 
