@@ -312,6 +312,46 @@ const FORM_ENDPOINT = "https://formspree.io/f/mkjgeejo";
     if (e.matches) setMenu(false);
   });
 
+  var dropdown = document.querySelector(".nav__dropdown");
+  if (dropdown) {
+    var ddToggle = dropdown.querySelector(".nav__dropdown-toggle");
+    var desktop = window.matchMedia("(min-width: 761px)");
+    var setDropdown = function (open) {
+      dropdown.classList.toggle("is-open", open);
+      ddToggle.setAttribute("aria-expanded", String(open));
+    };
+
+    ddToggle.addEventListener("click", function (e) {
+      if (!desktop.matches) return;
+      if (e.pointerType === "mouse") setDropdown(true);
+      else setDropdown(!dropdown.classList.contains("is-open"));
+    });
+    dropdown.addEventListener("pointerenter", function (e) {
+      if (e.pointerType === "mouse" && desktop.matches) setDropdown(true);
+    });
+    dropdown.addEventListener("pointerleave", function (e) {
+      if (e.pointerType === "mouse") setDropdown(false);
+    });
+    dropdown.addEventListener("focusout", function (e) {
+      if (!dropdown.contains(e.relatedTarget)) setDropdown(false);
+    });
+    dropdown.addEventListener("click", function (e) {
+      if (e.target.closest(".nav__menu a")) setDropdown(false);
+    });
+    document.addEventListener("click", function (e) {
+      if (!dropdown.contains(e.target)) setDropdown(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && dropdown.classList.contains("is-open")) {
+        setDropdown(false);
+        ddToggle.focus();
+      }
+    });
+    desktop.addEventListener("change", function () {
+      setDropdown(false);
+    });
+  }
+
   /* ---------- Gentle reveal on scroll ---------- */
   var items = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window) {

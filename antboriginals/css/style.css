@@ -168,7 +168,8 @@ b { font-weight: 700; }
   color: var(--muted);
   transition: color 0.3s var(--ease);
 }
-.nav__links a::after {
+.nav__links a::after,
+.nav__dropdown-toggle::after {
   content: "";
   position: absolute;
   left: 0;
@@ -182,6 +183,67 @@ b { font-weight: 700; }
 }
 .nav__links a:hover { color: var(--text); }
 .nav__links a:hover::after { transform: scaleX(1); }
+
+.nav__dropdown { position: relative; }
+.nav__dropdown-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: color 0.3s var(--ease);
+}
+.nav__dropdown-toggle svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.3s var(--ease);
+}
+.nav__dropdown-toggle:hover,
+.nav__dropdown.is-open .nav__dropdown-toggle { color: var(--text); }
+.nav__dropdown-toggle:hover::after,
+.nav__dropdown.is-open .nav__dropdown-toggle::after { transform: scaleX(1); }
+.nav__dropdown.is-open .nav__dropdown-toggle svg { transform: rotate(180deg); }
+
+.nav__menu {
+  position: absolute;
+  top: 100%;
+  left: -1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 11rem;
+  margin-top: 0.85rem;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid var(--line);
+  background: rgba(11, 11, 12, 0.96);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+}
+.nav__menu::before {
+  content: "";
+  position: absolute;
+  inset: -0.85rem 0 auto 0;
+  height: 0.85rem;
+}
+.nav__dropdown.is-open .nav__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.nav__menu a { width: fit-content; }
 
 .nav__toggle {
   display: none;
@@ -228,6 +290,31 @@ b { font-weight: 700; }
     font-weight: 300;
     letter-spacing: -0.035em;
     color: var(--text);
+  }
+  .nav__dropdown-toggle {
+    padding: 0;
+    color: var(--text);
+    font-size: clamp(2.25rem, 10vw, 3rem);
+    font-weight: 300;
+    letter-spacing: -0.035em;
+    cursor: default;
+  }
+  .nav__dropdown-toggle svg,
+  .nav__dropdown-toggle::after { display: none; }
+  .nav__menu {
+    position: static;
+    min-width: 0;
+    margin: 0.35rem 0 0;
+    padding: 0 0 0 0.35rem;
+    border: 0;
+    background: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .nav__links .nav__menu a {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+    color: var(--muted);
   }
   .nav.is-open .nav__links { opacity: 1; visibility: visible; }
   .nav.is-open::before { opacity: 0; }

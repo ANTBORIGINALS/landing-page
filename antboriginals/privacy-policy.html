@@ -53,7 +53,16 @@
 
       <nav class="nav__links" id="navLinks" aria-label="Primary">
         <a href="index.html#studio">Studio</a>
-        <a href="index.html#services">Services</a>
+        <div class="nav__dropdown">
+          <button class="nav__dropdown-toggle" type="button" aria-expanded="false" aria-controls="servicesMenu">
+            Services
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav__menu" id="servicesMenu">
+            <a href="index.html#services">Creative</a>
+            <a href="index.html#software">Software</a>
+          </div>
+        </div>
         <a href="index.html#about">About</a>
         <a href="brand-manual.html">Brand</a>
         <a href="index.html#contact">Contact</a>
