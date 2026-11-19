@@ -589,26 +589,26 @@ b { font-weight: 700; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
-.tech__grid .card { justify-content: flex-start; gap: 2.5rem; min-height: 0; }
-.tech__how { margin-top: clamp(4rem, 9vw, 7rem); }
-.tech__subtitle {
+.software__grid .card { justify-content: flex-start; gap: 2.5rem; min-height: 0; }
+.software__how { margin-top: clamp(4rem, 9vw, 7rem); }
+.software__subtitle {
   font-size: clamp(1.6rem, 2.6vw, 2.25rem);
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.035em;
 }
-.tech__steps { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-.tech__steps li {
+.software__steps { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.software__steps li {
   display: grid;
   grid-template-columns: 3.5rem minmax(0, 1fr);
   gap: 1.25rem;
   padding-block: 1.4rem;
   border-bottom: 1px solid var(--line);
 }
-.tech__steps span { color: var(--red); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.14em; }
-.tech__steps strong { display: block; margin-bottom: 0.35rem; font-weight: 500; font-size: 1.1rem; letter-spacing: -0.015em; }
-.tech__steps p { color: var(--muted); font-size: 0.95rem; line-height: 1.55; }
-.tech__cta { margin-top: 2.25rem; }
+.software__steps span { color: var(--red); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.14em; }
+.software__steps strong { display: block; margin-bottom: 0.35rem; font-weight: 500; font-size: 1.1rem; letter-spacing: -0.015em; }
+.software__steps p { color: var(--muted); font-size: 0.95rem; line-height: 1.55; }
+.software__cta { margin-top: 2.25rem; }
 
 /* ---------- IP & legal ---------- */
 .note {
