@@ -881,7 +881,18 @@ b { font-weight: 700; }
   font: 400 1.15rem/1.4 var(--font);
   transition: border-color 0.3s var(--ease);
 }
-.field textarea { resize: vertical; min-height: 7rem; }
+.field textarea {
+  display: block;
+  min-height: 7rem;
+  max-height: 18rem;
+  resize: none;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--red) transparent;
+}
+.field textarea::-webkit-scrollbar { width: 4px; }
+.field textarea::-webkit-scrollbar-track { background: transparent; }
+.field textarea::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
 .field input:focus,
 .field textarea:focus { outline: none; border-color: var(--red); }
 .field input:focus-visible,

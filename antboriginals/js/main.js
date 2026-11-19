@@ -390,8 +390,23 @@ const FORM_ENDPOINT = "https://formspree.io/f/mkjgeejo";
       status.classList.toggle("is-error", Boolean(isError));
     };
 
+    var message = form.querySelector("textarea");
+    var fitMessage = function () {
+      if (!message) return;
+      message.style.height = "auto";
+      var border = message.offsetHeight - message.clientHeight;
+      var max = parseFloat(getComputedStyle(message).maxHeight) || Infinity;
+      var height = message.scrollHeight + border;
+      message.style.height = Math.min(height, max) + "px";
+      message.style.overflowY = height > max ? "auto" : "hidden";
+    };
+
     form.addEventListener("input", function (e) {
       e.target.classList.remove("is-invalid");
+      if (e.target === message) fitMessage();
+    });
+    form.addEventListener("reset", function () {
+      window.setTimeout(fitMessage, 0);
     });
 
     form.addEventListener("submit", function (e) {
