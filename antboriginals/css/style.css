@@ -847,6 +847,16 @@ b { font-weight: 700; }
   font-size: 0.95rem;
   transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
+.social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.social svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
 .social a:hover { color: var(--red); border-color: var(--red); }
 
 .footer__legal {
