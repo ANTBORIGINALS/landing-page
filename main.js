@@ -1,19 +1,12 @@
 /* ==========================================================
-   ANTboriginals — site behavior
+    site behavior
    ========================================================== */
 
 /* ---------- Contact form settings ----------
    GitHub Pages is static, so the form needs somewhere to send messages.
-   FORM_ENDPOINT is set to the Formspree form below: submissions are sent
-   straight to your inbox without opening the visitor's email app.
-
-   To use a different Formspree form, or to switch back to the mailto
-   fallback, change the two lines below:
-   - FORM_ENDPOINT = "" reverts to opening the visitor's email app instead.
-   - CONTACT_EMAIL is still used as the "from"/reply context in that fallback,
-     and is shown to visitors if a Formspree submission ever fails.
+   FORM_ENDPOINT
 ------------------------------------------------------------------- */
-const CONTACT_EMAIL = "luisantoniotinocoberroteran@antboriginals.com";
+const CONTACT_EMAIL = "ltinoco@antboriginals.com";
 const FORM_ENDPOINT = "https://formspree.io/f/mkjgeejo";
 
 (function () {
@@ -340,18 +333,10 @@ const FORM_ENDPOINT = "https://formspree.io/f/mkjgeejo";
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  /* ---------- Contact form ----------
-     Only present on index.html, so guard it: pages like privacy-policy.html
-     and terms-of-use.html share this same script but have no form. */
   var form = document.getElementById("contactForm");
   var status = document.getElementById("formStatus");
 
   if (form && status) {
-    /* Second, independent anti-bot layer on top of the honeypot field below:
-       a real visitor needs at least a couple of seconds to read and fill the
-       form, so a submission that arrives faster than that is almost always
-       a script, not a person. This never blocks a genuine visitor — it only
-       asks them to pause for a moment. */
     var formLoadedAt = Date.now();
     var MIN_FILL_TIME_MS = 2000;
 
@@ -388,7 +373,7 @@ const FORM_ENDPOINT = "https://formspree.io/f/mkjgeejo";
       }
 
       var data = new FormData(form);
-      if (data.get("_gotcha")) return; // spam trap
+      if (data.get("_gotcha")) return; 
 
       if (FORM_ENDPOINT) {
         setStatus("Sending…", false);
