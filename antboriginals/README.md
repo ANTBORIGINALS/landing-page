@@ -1,6 +1,6 @@
 # ANTboriginals — Landing page
 
-Sitio estático (HTML + CSS + JS, sin dependencias ni build) listo para GitHub Pages.
+Sitio estático (HTML + CSS + JS) para GitHub Pages.
 
 ## Estructura
 
@@ -21,29 +21,22 @@ antboriginals/
 ```
 
 ## Publicar en GitHub Pages
-
-1. Crea un repositorio nuevo en GitHub (por ejemplo `antboriginals`).
-2. Sube **el contenido de esta carpeta** a la raíz del repositorio (`index.html` debe quedar en la raíz).
-3. En el repositorio: **Settings → Pages → Build and deployment**.
-4. En *Source* elige **Deploy from a branch**, rama `main`, carpeta `/ (root)` y guarda.
-5. En uno o dos minutos el sitio estará en `https://TU-USUARIO.github.io/antboriginals/`.
-
 Todas las rutas son relativas, así que funciona igual en un dominio propio o en una subruta de GitHub Pages.
 
 ## Qué debes editar antes de publicar
 
 - **Correo y formulario** → `js/main.js`, al inicio:
-  - `CONTACT_EMAIL`: tu correo real.
-  - `FORM_ENDPOINT`: opcional. Crea un formulario gratis en formspree.io y pega su URL para recibir los mensajes sin abrir el correo del visitante. Si lo dejas vacío, el formulario abre el correo del visitante con el mensaje ya escrito.
-- **Redes sociales** → `index.html`, sección del footer (`class="social"`): reemplaza los enlaces genéricos por tus perfiles.
+  - `CONTACT_EMAIL`:.
+  - `FORM_ENDPOINT`:.
+- **Redes sociales** → `index.html`, sección del footer (`class="social"`):
 - **Textos** → todo el contenido está directamente en `index.html`.
 - **Colores** → variables al inicio de `css/style.css` (`:root`).
-- **Dominio** → `https://antboriginals.com/` ya está definido en las etiquetas `canonical`, Open Graph, Twitter Card y JSON-LD de las cuatro páginas, y en `robots.txt` y `sitemap.xml`. Si algún día cambias de dominio, busca ese texto en esos archivos.
+- **Dominio** → `https://antboriginals.com/` ya está definido en las etiquetas `canonical`, Open Graph, Twitter Card y JSON-LD de las cuatro páginas, y en `robots.txt` y `sitemap.xml`.
 - **Imagen de Open Graph** → `assets/og-image.jpg` (1200×630, creada a partir de la pieza "Built beyond the expected" del manual) se usa en `og:image` y `twitter:image` de todas las páginas.
 
 ## Video de fondo del hero
 
-`assets/hero-background.mp4` se reproduce en loop, silenciado, detrás del título del hero (`index.html`), con `assets/hero-poster.jpg` como imagen de respaldo mientras carga o si el navegador no puede reproducir video. Ya viene sin audio (no hace falta en un loop silencioso) y recomprimido a ~7.5 MB (el original pesaba 36 MB) — bien por debajo del límite de 100 MB por archivo de GitHub, pero sigue siendo el archivo más pesado del sitio, así que si más adelante cambias el clip, vale la pena recomprimirlo de forma similar antes de subirlo. Para usuarios con "reducir movimiento" activado en su sistema, el sitio muestra el poster estático en vez del video (`css/style.css` + `js/main.js`).
+`assets/hero-background.mp4` se reproduce en loop, silenciado, detrás del título del hero (`index.html`), con `assets/hero-poster.jpg` como imagen de respaldo mientras carga o si el navegador no puede reproducir video. Ya viene sin audio y recomprimido a ~7.5 MB (el original pesaba 36 MB) — por debajo del límite de 100 MB por archivo de GitHub, pero sigue siendo el archivo más pesado del sitio. Para usuarios con "reducir movimiento" activado en el sistema, el sitio muestra el poster estático en vez del video (`css/style.css` + `js/main.js`).
 
 ## Sticker, loader y tarjetas de servicios
 
@@ -65,4 +58,4 @@ Página propia con la versión de exhibición del manual (PDF incluido en `asset
 
 ## Páginas legales
 
-`privacy-policy.html` y `terms-of-use.html` son plantillas de Política de Privacidad y Términos de Uso enlazadas desde el footer de cada página. La política de privacidad incluye un apartado dedicado al marco costarricense (Ley N.° 8968 y PRODHAB): consentimiento informado, proporcionalidad, seguridad, confidencialidad y los derechos de acceso, rectificación y supresión. Ambas páginas son contenido genérico de referencia, no asesoría legal — antes de publicarlas, haz que un abogado costarricense las revise y las ajuste a tu operación real (por ejemplo, si usas Formspree u otro proveedor para el formulario, o si más adelante agregas cookies o analítica).
+`privacy-policy.html` y `terms-of-use.html` son plantillas de Política de Privacidad y Términos de Uso enlazadas desde el footer de cada página. La política de privacidad incluye un apartado dedicado al marco costarricense (Ley N.° 8968 y PRODHAB): consentimiento informado, proporcionalidad, seguridad, confidencialidad y los derechos de acceso, rectificación y supresión. Ambas páginas son contenido.
