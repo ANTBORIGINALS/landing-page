@@ -1155,7 +1155,11 @@ b { font-weight: 700; }
 }
 .legal__body li { margin-bottom: 0.5rem; line-height: 1.6; }
 .legal__body li::marker { color: var(--red); }
-.legal__body a { color: var(--text); border-bottom: 1px solid var(--line-strong); }
+.legal__body a {
+  color: var(--text);
+  border-bottom: 1px solid var(--line-strong);
+  overflow-wrap: anywhere;
+}
 .legal__body a:hover { color: var(--red); border-color: var(--red); }
 
 .legal__callout {
