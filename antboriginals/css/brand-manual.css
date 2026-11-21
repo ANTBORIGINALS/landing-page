@@ -34,7 +34,7 @@
 .bm-toc a.is-active { padding-left: 0.5rem; }
 .bm-toc a.is-active b { color: var(--bm-red); }
 .bm-toc .is-soon { opacity: 0.4; }
-@media (max-width: 1000px) { .bm-layout { grid-template-columns: 1fr; } .bm-toc { display: none; } }
+@media (max-width: 1000px) { .bm-layout { grid-template-columns: minmax(0, 1fr); } .bm-toc { display: none; } }
 
 .bm-sec { padding-block: clamp(4rem, 9vw, 8rem); border-top: 1px solid var(--line); scroll-margin-top: var(--nav-h); }
 .bm-sec:first-child { border-top: 0; }
