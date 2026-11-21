@@ -1,9 +1,6 @@
 .git
 .github
 **/.DS_Store
-antboriginals.zip
+*.zip
 antboriginals/README.md
-index.html
-main.js
-style.css
 fly.toml
