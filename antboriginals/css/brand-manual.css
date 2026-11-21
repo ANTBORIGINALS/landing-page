@@ -1,8 +1,4 @@
-/* ==========================================================
-   BRAND MANUAL page — uses the site tokens (style.css) and the
-   manual's own typeface: Helvetica Neue (Bold / Regular / Ultra Light).
-   Helvetica Neue ships with macOS/iOS; elsewhere it falls back to Helvetica/Arial.
-   ========================================================== */
+/* Brand manual page. Uses the site tokens (style.css) and the manual's own typeface: Helvetica Neue (Bold / Regular / Ultra Light). Helvetica Neue ships with macOS/iOS; elsewhere it falls back to Helvetica/Arial. */
 .bm { --bm-red: #EB2B07; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 400; }
 .bm .bm-red { color: var(--bm-red); }
 .bm b, .bm .bm-bold { font-weight: 700; }
@@ -10,7 +6,6 @@
 .bm-btn--red { background: var(--red-deep); border-color: var(--red-deep); color: #fff; }
 .bm-btn--red:hover { background: var(--red); border-color: var(--red); }
 
-/* ---------- hero ---------- */
 .bm-hero { position: relative; overflow: hidden; min-height: 100svh; display: flex; align-items: flex-end; padding: calc(var(--nav-h) + 3rem) 0 clamp(5rem, 9vw, 7rem); --mx: 70%; --my: 30%; }
 .bm-hero__glow { position: absolute; inset: -20%; z-index: 0; pointer-events: none;
   background: radial-gradient(40% 40% at var(--mx) var(--my), rgba(235, 43, 7, 0.38), transparent 70%),
@@ -27,7 +22,6 @@
 .bm-colophon p + p { margin-top: 0.6rem; }
 .bm-colophon__sign { color: var(--text); font-weight: 100; letter-spacing: 0.06em; }
 
-/* ---------- layout + index ---------- */
 .bm-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
 .bm-toc { position: sticky; top: calc(var(--nav-h) + 2rem); padding-top: 3rem; font-size: 0.85rem; }
 .bm-toc__title { margin-bottom: 1.25rem; font-weight: 100; font-size: 1.6rem; letter-spacing: 0.02em; }
@@ -42,7 +36,6 @@
 .bm-toc .is-soon { opacity: 0.4; }
 @media (max-width: 1000px) { .bm-layout { grid-template-columns: 1fr; } .bm-toc { display: none; } }
 
-/* ---------- sections ---------- */
 .bm-sec { padding-block: clamp(4rem, 9vw, 8rem); border-top: 1px solid var(--line); scroll-margin-top: var(--nav-h); }
 .bm-sec:first-child { border-top: 0; }
 .bm-chap { position: relative; margin-bottom: clamp(2.5rem, 6vw, 4.5rem); }
