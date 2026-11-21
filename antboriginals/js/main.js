@@ -166,7 +166,7 @@ const FORM_ENDPOINT = "https://formspree.io/f/mkjgeejo";
      "reduced motion": plain stacked tiles, videos play while visible. */
   var svcStage = document.getElementById("svcStage");
   if (svcStage) {
-    var svcMQ = window.matchMedia("(min-width: 861px) and (prefers-reduced-motion: no-preference)");
+    var svcMQ = window.matchMedia("(min-width: 861px) and (min-height: 441px) and (prefers-reduced-motion: no-preference)");
     var svcStill = window.matchMedia("(prefers-reduced-motion: reduce)");
     var svcTiles = [].slice.call(svcStage.querySelectorAll(".svc-tile"));
     var svcLabels = [].slice.call(svcStage.querySelectorAll(".svc-label"));
@@ -201,7 +201,7 @@ const FORM_ENDPOINT = "https://formspree.io/f/mkjgeejo";
         el.style.zIndex = i;
         el.style.setProperty("--veil", (1 - sm((e - 0.35) / 0.65)).toFixed(3));
         playVideo(svcVideos[i], u > -1 && u < 1);
-        var la = Math.max(0, 1 - Math.abs(u) * 1.6);
+        var la = Math.max(0, 1 - Math.abs(u) * 2.2);
         svcLabels[i].style.opacity = la.toFixed(3);
         svcLabels[i].style.transform = "translateY(" + (-u * 24).toFixed(1) + "px)";
       });

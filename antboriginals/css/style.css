@@ -1018,11 +1018,23 @@ b { font-weight: 700; }
    SERVICES: pinned stage of video tiles (desktop) + slider
    ========================================================== */
 .svc-stage { position: relative; height: 300vh; }
-.svc-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.svc-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
 .svc-labels { position: absolute; z-index: 20; left: 0; top: calc(var(--nav-h) + 1rem); width: 45%; height: 5rem; pointer-events: none; }
 .svc-label { position: absolute; left: 0; top: 0; opacity: 0; max-width: 9em; font-size: clamp(1.6rem, 3.2vw, 3rem); font-weight: 600; line-height: 1; letter-spacing: -0.04em; text-transform: uppercase; }
 .svc-tiles { list-style: none; margin: 0; padding: 0; }
-.svc-tile { position: absolute; left: 50%; top: 46%; width: min(58vw, 108vh); opacity: 0; visibility: hidden; will-change: transform, opacity; }
+.svc-tile {
+  --stage-free: calc(100vh - var(--nav-h));
+  position: absolute;
+  left: 50%;
+  top: calc(var(--nav-h) + (100% - var(--nav-h)) * 0.42);
+  width: min(58vw, calc((var(--stage-free) - 8rem) * 16 / 9 * 0.9));
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+}
+@supports (height: 100svh) {
+  .svc-tile { --stage-free: calc(100svh - var(--nav-h)); }
+}
 .svc-tile__media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 4px; background: #000; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55); }
 .svc-video { display: block; width: 100%; height: 100%; object-fit: cover; }
 /* the tile starts as the loader's cube gradient and clears to reveal the video */
@@ -1030,7 +1042,7 @@ b { font-weight: 700; }
 .svc-tile__cap { position: absolute; top: calc(100% + 1rem); left: 0; right: 0; text-align: center; }
 .svc-tile__cap strong { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
 .svc-tile__cap span { display: block; max-width: 34em; margin: 0.4rem auto 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
-@media (max-width: 860px), (prefers-reduced-motion: reduce) {
+@media (max-width: 860px), (max-height: 440px), (prefers-reduced-motion: reduce) {
   .svc-stage { height: auto; }
   .svc-sticky { position: static; height: auto; overflow: visible; }
   .svc-labels { display: none; }
