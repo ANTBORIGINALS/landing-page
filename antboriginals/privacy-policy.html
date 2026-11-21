@@ -34,7 +34,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=2">
 
-  <script>document.documentElement.classList.add('js');</script>
+  <script>if ('noModule' in HTMLScriptElement.prototype) document.documentElement.classList.add('js');</script>
 </head>
 <body id="top">
   <a class="skip-link" href="#policy">Skip to content</a>
@@ -202,6 +202,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=2"></script>
+  <script type="module" src="js/main.js?v=3"></script>
 </body>
 </html>
